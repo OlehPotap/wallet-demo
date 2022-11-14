@@ -1,0 +1,316 @@
+[{
+  "_id": {
+    "$oid": "634c569c6ea874a2457b44b7"
+  },
+  "name": "First Wallet",
+  "mnemonic": "Demo",
+  "password": "Demo",
+  "adress": "NATURE388f0353a936c76349599f0e4",
+  "amount": 2483958.485863,
+  "transactions": [
+    {
+      "transactionAmount": 62.58934983498,
+      "transactionDirection": "NATURE388f0353a936c76349599f0e4",
+      "_id": {
+        "$oid": "634c569c6ea874a2457b44b8"
+      }
+    },
+    {
+      "transactionAmount": -10.1284275,
+      "transactionDirection": "NATURE388f0353a936c76349599f0e4",
+      "_id": {
+        "$oid": "634c569c6ea874a2457b44b9"
+      }
+    },
+    {
+      "transactionAmount": 100.48347273487,
+      "transactionDirection": "NATURE388f0353a936c76349599f0e4",
+      "_id": {
+        "$oid": "634c569c6ea874a2457b44ba"
+      }
+    },
+    {
+      "transactionAmount": -573.594645,
+      "transactionDirection": "NATURE388f0353a936c76349599f0e4",
+      "_id": {
+        "$oid": "634c569c6ea874a2457b44bb"
+      }
+    },
+    {
+      "transactionAmount": -10.583959395,
+      "transactionDirection": "NATURE388f0353a936c76349599f0e4",
+      "_id": {
+        "$oid": "634c569c6ea874a2457b44bc"
+      }
+    },
+    {
+      "transactionAmount": 10.583959395,
+      "transactionDirection": "NATURE388f0353a936c76349599f0e4",
+      "_id": {
+        "$oid": "634c569c6ea874a2457b44bd"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1665947292443"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1665947292443"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "634c57186ea874a2457b44c0"
+  },
+  "name": "Second Wallet",
+  "mnemonic": "Demo",
+  "password": "Demo",
+  "adress": "NATURE388f0353a936c76349599f0e4",
+  "amount": 0.4,
+  "transactions": [
+    {
+      "transactionAmount": -6344.54874,
+      "transactionDirection": "NATURE388f0353a936c76349599f0e4",
+      "_id": {
+        "$oid": "634c57186ea874a2457b44c1"
+      }
+    },
+    {
+      "transactionAmount": -10.45934,
+      "transactionDirection": "NATURE388f0353a936c76349599f0e4",
+      "_id": {
+        "$oid": "634c57186ea874a2457b44c2"
+      }
+    },
+    {
+      "transactionAmount": -12145.4534,
+      "transactionDirection": "NATURE388f0353a936c76349599f0e4",
+      "_id": {
+        "$oid": "634c57186ea874a2457b44c3"
+      }
+    },
+    {
+      "transactionAmount": -255.346785,
+      "transactionDirection": "NATURE388f0353a936c76349599f0e4",
+      "_id": {
+        "$oid": "634c57186ea874a2457b44c4"
+      }
+    },
+    {
+      "transactionAmount": -10.583959395,
+      "transactionDirection": "NATURE388f0353a936c76349599f0e4",
+      "_id": {
+        "$oid": "634c57186ea874a2457b44c5"
+      }
+    },
+    {
+      "transactionAmount": 10.583959395,
+      "transactionDirection": "NATURE388f0353a936c76349599f0e4",
+      "_id": {
+        "$oid": "634c57186ea874a2457b44c6"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1665947416934"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1665947416934"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "634c57746ea874a2457b44c9"
+  },
+  "name": "Third Wallet",
+  "mnemonic": "Demo",
+  "password": "Demo",
+  "adress": "NATURE388f0353a936c76349599f0e4",
+  "amount": 284.2395239,
+  "transactions": [
+    {
+      "transactionAmount": 48.4934,
+      "transactionDirection": "NATURE388f0353a936c76349599f0e4",
+      "_id": {
+        "$oid": "634c57746ea874a2457b44ca"
+      }
+    },
+    {
+      "transactionAmount": -1450.654664,
+      "transactionDirection": "NATURE388f0353a936c76349599f0e4",
+      "_id": {
+        "$oid": "634c57746ea874a2457b44cb"
+      }
+    },
+    {
+      "transactionAmount": 44.4534,
+      "transactionDirection": "NATURE388f0353a936c76349599f0e4",
+      "_id": {
+        "$oid": "634c57746ea874a2457b44cc"
+      }
+    },
+    {
+      "transactionAmount": -57.4675,
+      "transactionDirection": "NATURE388f0353a936c76349599f0e4",
+      "_id": {
+        "$oid": "634c57746ea874a2457b44cd"
+      }
+    },
+    {
+      "transactionAmount": 23.254645,
+      "transactionDirection": "NATURE388f0353a936c76349599f0e4",
+      "_id": {
+        "$oid": "634c57746ea874a2457b44ce"
+      }
+    },
+    {
+      "transactionAmount": 10.583959395,
+      "transactionDirection": "NATURE388f0353a936c76349599f0e4",
+      "_id": {
+        "$oid": "634c57746ea874a2457b44cf"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1665947508443"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1665947508443"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "634c57d66ea874a2457b44d2"
+  },
+  "name": "Fourth Wallet",
+  "mnemonic": "Demo",
+  "password": "Demo",
+  "adress": "NATURE388f0353a936c76349599f0e4",
+  "amount": 124436,
+  "transactions": [
+    {
+      "transactionAmount": 48.4934,
+      "transactionDirection": "NATURE388f0353a936c76349599f0e4",
+      "_id": {
+        "$oid": "634c57d66ea874a2457b44d3"
+      }
+    },
+    {
+      "transactionAmount": 140.5436,
+      "transactionDirection": "NATURE388f0353a936c76349599f0e4",
+      "_id": {
+        "$oid": "634c57d66ea874a2457b44d4"
+      }
+    },
+    {
+      "transactionAmount": 456.4564,
+      "transactionDirection": "NATURE388f0353a936c76349599f0e4",
+      "_id": {
+        "$oid": "634c57d66ea874a2457b44d5"
+      }
+    },
+    {
+      "transactionAmount": 457.46757565,
+      "transactionDirection": "NATURE388f0353a936c76349599f0e4",
+      "_id": {
+        "$oid": "634c57d66ea874a2457b44d6"
+      }
+    },
+    {
+      "transactionAmount": 86.77,
+      "transactionDirection": "NATURE388f0353a936c76349599f0e4",
+      "_id": {
+        "$oid": "634c57d66ea874a2457b44d7"
+      }
+    },
+    {
+      "transactionAmount": 71.777777777,
+      "transactionDirection": "NATURE388f0353a936c76349599f0e4",
+      "_id": {
+        "$oid": "634c57d66ea874a2457b44d8"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1665947606202"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1665947606202"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "634c582b6ea874a2457b44db"
+  },
+  "name": "Fifth Wallet",
+  "mnemonic": "Demo",
+  "password": "Demo",
+  "adress": "NATURE388f0353a936c76349599f0e4",
+  "amount": 35848.49596,
+  "transactions": [
+    {
+      "transactionAmount": -84.854,
+      "transactionDirection": "NATURE388f0353a936c76349599f0e4",
+      "_id": {
+        "$oid": "634c582b6ea874a2457b44dc"
+      }
+    },
+    {
+      "transactionAmount": -498.45845,
+      "transactionDirection": "NATURE388f0353a936c76349599f0e4",
+      "_id": {
+        "$oid": "634c582b6ea874a2457b44dd"
+      }
+    },
+    {
+      "transactionAmount": 549.84,
+      "transactionDirection": "NATURE388f0353a936c76349599f0e4",
+      "_id": {
+        "$oid": "634c582b6ea874a2457b44de"
+      }
+    },
+    {
+      "transactionAmount": -457.46757565,
+      "transactionDirection": "NATURE388f0353a936c76349599f0e4",
+      "_id": {
+        "$oid": "634c582b6ea874a2457b44df"
+      }
+    },
+    {
+      "transactionAmount": 445.5577,
+      "transactionDirection": "NATURE388f0353a936c76349599f0e4",
+      "_id": {
+        "$oid": "634c582b6ea874a2457b44e0"
+      }
+    },
+    {
+      "transactionAmount": 54.56,
+      "transactionDirection": "NATURE388f0353a936c76349599f0e4",
+      "_id": {
+        "$oid": "634c582b6ea874a2457b44e1"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1665947691235"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1665947691235"
+    }
+  }
+}]
