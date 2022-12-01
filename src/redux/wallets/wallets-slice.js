@@ -10,7 +10,7 @@ const initialState = {
   loading: false,
 };
 
-const productsSlice = createSlice({
+const walletsSlice = createSlice({
   name: "products",
   initialState,
   extraReducers: {
@@ -35,4 +35,4 @@ const productsSlice = createSlice({
   },
 });
 
-export default productsSlice.reducer;
+export default walletsSlice.reducer;

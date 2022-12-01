@@ -1,8 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
-import WalletsReducer from "./wallets/wallets-slice";
+import walletsReducer from "./wallets/wallets-slice";
+import authReducer from "./auth/auth-slice"
 
 export const store = configureStore({
   reducer: {
-    wallets: WalletsReducer,
+    auth: authReducer,
+    wallets: walletsReducer,
   },
 });

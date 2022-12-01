@@ -19,7 +19,7 @@ import {
   // getIsLoading
 } from "../redux/wallets/wallets-selectors";
 import LeftPanelModal from "./LeftPanelModal/LeftPanelModal";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route, Link, Navigate  } from "react-router-dom";
 
 function App() {
   // window.addEventListener("resize", () => {
@@ -133,8 +133,11 @@ function App() {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<SignInPage />} />
         <Route
+       
           path="/home"
           element={
+
+            !isLogedIn ? <Navigate to="/login" /> : 
             <>
               <Container>
                 {" "}
