@@ -1,10 +1,10 @@
 import s from "./walletsList.module.scss";
-import WalletsListItem from "./WalletsListItem/WalletsListItem.jsx";
+// import WalletsListItem from "./WalletsListItem/WalletsListItem.jsx";
 
 const WalletsList = ({ handleSelectWallet, wallets }) => {
   return (
     <ul className={s.walletsList}>
-      {wallets.map((el) => {
+      {/* {wallets.map((el) => {
         return (
           <WalletsListItem
             handleSelectWallet={handleSelectWallet}
@@ -16,7 +16,7 @@ const WalletsList = ({ handleSelectWallet, wallets }) => {
             amount={el.amount}
           />
         );
-      })}
+      })} */}
     </ul>
   );
 };

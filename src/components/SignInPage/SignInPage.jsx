@@ -2,6 +2,8 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { Link } from "react-router-dom";
 import s from "./signInPage.module.scss";
+import { useDispatch } from "react-redux";
+import { login } from "../../redux/auth/auth-operations";
 
 const SignInPage = () => {
   const schema = Yup.object().shape({
@@ -14,13 +16,15 @@ const SignInPage = () => {
       .required(),
   });
 
+  const dispatch = useDispatch();
+
   return (
     <section className={s.section}>
       <Formik
         initialValues={{ userName: "", password: "" }}
         validationSchema={schema}
         onSubmit={({ userName, password }) => {
-          console.log(userName, password);
+          dispatch(login({ userName: userName, password: password }));
         }}
       >
         <Form className={s.form}>

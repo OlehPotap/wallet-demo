@@ -9,8 +9,7 @@ import AddWalletModal from "./AddWalletModal";
 import NewWalletModal from "./NewWalletModal";
 import SendModal from "./SendModal";
 import ReciveModal from "./ReciveModal";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux/es/exports.js";
 import { getWallets } from "../redux/wallets/wallets-operations";
 import { useSelector } from "react-redux";
@@ -18,8 +17,15 @@ import {
   getAllWallets,
   // getIsLoading
 } from "../redux/wallets/wallets-selectors";
+import {
+  getUser,
+  getIslogin,
+  getIsLoading,
+  getIsAuthChecking,
+} from "../redux/auth/auth-selectors";
 import LeftPanelModal from "./LeftPanelModal/LeftPanelModal";
-import { Routes, Route, Link, Navigate  } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
+import { checkAuth } from "../redux/auth/auth-operations";
 
 function App() {
   // window.addEventListener("resize", () => {
@@ -28,8 +34,13 @@ function App() {
   // const isLoading = useSelector(getIsLoading);
   // console.log(isLoading);
   const wallets = useSelector(getAllWallets);
+  const user = useSelector(getUser);
+  const isLogin = useSelector(getIslogin);
+  const isLoading = useSelector(getIsLoading);
+  const authCheking = useSelector(getIsAuthChecking);
+  console.log(`Loading: ${isLoading}`);
+  console.log(`Autorized: ${isLogin}`);
   const dispatch = useDispatch();
-  const [isLogedIn, setIsLogedIn] = useState(false);
   const [leftPanelIsOpen, setLeftPanelIsOpen] = useState(false);
   const [selectedWallet, setSelectedWallet] = useState([]);
   const [walletData, setWalletData] = useState({});
@@ -92,7 +103,13 @@ function App() {
   const pageWidth = window.innerWidth;
 
   useEffect(() => {
-    console.log(pageWidth);
+    if (localStorage.getItem("token")) {
+      console.log("dispath this");
+      dispatch(checkAuth());
+    } // eslint-disable-next-line
+  }, []);
+
+  useEffect(() => {
     dispatch(getWallets());
   }, [dispatch, pageWidth]);
 
@@ -121,75 +138,88 @@ function App() {
   };
   return (
     <>
-      <Header
-        isLogedIn={isLogedIn}
-        pageWidth={pageWidth}
-        handleOpenLeftPanelModal={handleOpenLeftPanelModal}
-        handleOpenLeftPanel={handleOpenLeftPanel}
-        handleOpenAddWalletModal={handleOpenAddWalletModal}
-      />
+      {" "}
+      {authCheking ? (
+        <div>Please Wait...</div>
+      ) : (
+        <>
+          <h1>{isLogin ? user : "Not Autorized"}</h1>
+          <Header
+            isLogedIn={isLogin}
+            pageWidth={pageWidth}
+            handleOpenLeftPanelModal={handleOpenLeftPanelModal}
+            handleOpenLeftPanel={handleOpenLeftPanel}
+            handleOpenAddWalletModal={handleOpenAddWalletModal}
+          />
 
-      <Routes>
-        <Route path="/register" element={<RegisterPage />} />
-        <Route path="/login" element={<SignInPage />} />
-        <Route
-       
-          path="/home"
-          element={
+          <Routes>
+            <Route path="/register" element={<RegisterPage />} />
+            <Route path="/login" element={<SignInPage />} />
+            <Route
+              path="/"
+              element={
+                !isLogin ? (
+                  <Navigate to="/login" />
+                ) : (
+                  <>
+                    <Container>
+                      {" "}
+                      <RightPanel
+                        handleOpenReciveModal={handleOpenReciveModal}
+                        handleOpenSendModal={handleOpenSendModal}
+                        walletName={walletData.name}
+                        balance={walletData.amount}
+                        leftPanelIsOpen={leftPanelIsOpen}
+                      />
+                      <TransactionsList
+                        transactions={walletData.transactions}
+                        leftPanelIsOpen={leftPanelIsOpen}
+                      />
+                    </Container>
+                    {pageWidth < 1280 ? (
+                      <LeftPanelModal
+                        wallets={
+                          selectedWallet.length > 0 ? selectedWallet : wallets
+                        }
+                        handleSelectWallet={handleSelectWallet}
+                        open={openModal.LeftPanelModalIsOpen}
+                        handleClose={handleClosetModal}
+                      />
+                    ) : (
+                      <LeftPanel
+                        wallets={
+                          selectedWallet.length > 0 ? selectedWallet : wallets
+                        }
+                        handleSelectWallet={handleSelectWallet}
+                        leftPanelIsOpen={leftPanelIsOpen}
+                        handleOpenLeftPanel={handleOpenLeftPanel}
+                      />
+                    )}
+                  </>
+                )
+              }
+            />
+          </Routes>
 
-            !isLogedIn ? <Navigate to="/login" /> : 
-            <>
-              <Container>
-                {" "}
-                <RightPanel
-                  handleOpenReciveModal={handleOpenReciveModal}
-                  handleOpenSendModal={handleOpenSendModal}
-                  walletName={walletData.name}
-                  balance={walletData.amount}
-                  leftPanelIsOpen={leftPanelIsOpen}
-                />
-                <TransactionsList
-                  transactions={walletData.transactions}
-                  leftPanelIsOpen={leftPanelIsOpen}
-                />
-              </Container>
-              {pageWidth < 1280 ? (
-                <LeftPanelModal
-                  wallets={selectedWallet.length > 0 ? selectedWallet : wallets}
-                  handleSelectWallet={handleSelectWallet}
-                  open={openModal.LeftPanelModalIsOpen}
-                  handleClose={handleClosetModal}
-                />
-              ) : (
-                <LeftPanel
-                  wallets={selectedWallet.length > 0 ? selectedWallet : wallets}
-                  handleSelectWallet={handleSelectWallet}
-                  leftPanelIsOpen={leftPanelIsOpen}
-                  handleOpenLeftPanel={handleOpenLeftPanel}
-                />
-              )}
-            </>
-          }
-        />
-      </Routes>
-
-      <AddWalletModal
-        handleOpenNewWalletModal={handleOpenNewWalletModal}
-        open={openModal.AddWalletIsOpen}
-        handleClose={handleClosetModal}
-      />
-      <NewWalletModal
-        open={openModal.NewWalletIsOpen}
-        handleClose={handleClosetModal}
-      />
-      <SendModal
-        open={openModal.SendModalIsOpen}
-        handleClose={handleClosetModal}
-      />
-      <ReciveModal
-        open={openModal.ReciveModalIsopen}
-        handleClose={handleClosetModal}
-      />
+          <AddWalletModal
+            handleOpenNewWalletModal={handleOpenNewWalletModal}
+            open={openModal.AddWalletIsOpen}
+            handleClose={handleClosetModal}
+          />
+          <NewWalletModal
+            open={openModal.NewWalletIsOpen}
+            handleClose={handleClosetModal}
+          />
+          <SendModal
+            open={openModal.SendModalIsOpen}
+            handleClose={handleClosetModal}
+          />
+          <ReciveModal
+            open={openModal.ReciveModalIsopen}
+            handleClose={handleClosetModal}
+          />
+        </>
+      )}
     </>
   );
 }
